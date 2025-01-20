@@ -1,0 +1,67 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #333; /* Default dark text */
+  background-color: #f4f4f9; /* Light background for the whole page */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: block; /* Remove flex centering */
+  min-width: 320px; /* Ensures proper rendering on small devices */
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+/* Navbar Links */
+a {
+  font-weight: 500;
+  color: #4caf50; /* Green links */
+  text-decoration: none;
+}
+a:hover {
+  color: #388e3c; /* Darker green */
+}
+
+/* Heading Styles */
+h1, h2 {
+  font-weight: bold;
+  color: #333; /* Dark gray text */
+}
+
+/* Buttons */
+button {
+  border-radius: 5px;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: inherit;
+  background-color: #4caf50; /* Green background */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+button:hover {
+  background-color: #45a049; /* Darker green */
+}
+button:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Dark Mode Styling */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  }
+}
