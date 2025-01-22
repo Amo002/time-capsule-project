@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import UserLogin from "./pages/main/UserLogin";
 import Register from "./pages/main/Register";
 import AdminLogin from "./pages/admin/AdminLogin";
+import Dashboard from "./pages/admin/Dashboard";
 import Home from "./pages/main/Home";
 import RedirectIfAuthenticated from "./hoc/RedirectIfAuthenticated";
+import RequireAdminAuth from "./hoc/RequireAdminAuth";
+import NotFound from "./pages/NotFound";
 import "./styles/app.css";
 
 const App = () => {
@@ -29,6 +32,15 @@ const App = () => {
           }
         />
         <Route path="/admin-login" element={<AdminLogin />} />
+        <Route
+          path="/admin/dashboard"
+          element={
+            <RequireAdminAuth>
+              <Dashboard />
+            </RequireAdminAuth>
+          }
+        />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );

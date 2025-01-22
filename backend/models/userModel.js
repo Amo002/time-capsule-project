@@ -21,6 +21,7 @@ export const userLogin = async (email, password) => {
   }
 };
 
+
 export const userRegister = async (username, email, password) => {
   try {
     const [emailCheck] = await pool.query('SELECT * FROM users WHERE email = ?', [email]);

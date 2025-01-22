@@ -5,8 +5,14 @@ import "../../styles/main/navbar.css";
 const Navbar = () => {
   const navigate = useNavigate();
 
-  const isLoggedIn = !!localStorage.getItem("userToken"); // Check if user is logged in
-  const userData = JSON.parse(localStorage.getItem("userData")) || {};
+  const isLoggedIn = !!localStorage.getItem("userToken");
+
+  let userData;
+  try {
+    userData = JSON.parse(localStorage.getItem("userData")) || {};
+  } catch (error) {
+    userData = {}; // Fallback if parsing fails
+  }
 
   const handleProfileClick = () => {
     navigate("/profile");
@@ -32,10 +38,9 @@ const Navbar = () => {
           </Link>
         ) : (
           <>
-            <button className="user-name" onClick={handleProfileClick}>
+            <span className="user-name" onClick={handleProfileClick}>
               Welcome, {userData.username || "User"}
-            </button>
-
+            </span>
             <button className="logout-button" onClick={handleLogout}>
               Logout
             </button>

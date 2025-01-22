@@ -1,0 +1,81 @@
+.admin-dashboard {
+  padding: 20px;
+}
+
+.cards-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.card {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card.active {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.content-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.users-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th,
+.users-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.users-table th {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.users-table tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.user-profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.action-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: rgba(192, 43, 43, 0.8);
+  color: white;
+}
+
+.update-button {
+  background-color: rgba(43, 192, 43, 0.8);
+  color: white;
+}
+
+.action-button:hover {
+  opacity: 0.8;
+}

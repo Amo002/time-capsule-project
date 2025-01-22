@@ -22,20 +22,17 @@ const UserLogin = () => {
       );
 
       if (response.data.success) {
-        // Save session token and user data
         localStorage.setItem("userToken", response.data.token);
         localStorage.setItem("userData", JSON.stringify(response.data.user));
-        
         setMessage("User login successful!");
-        setTimeout(() => {
-          navigate("/"); 
-        }, 1000);
+        navigate("/");
       } else {
         setMessage(response.data.error || "User login failed.");
       }
     } catch (error) {
-      console.error("Error during user login:", error);
-      setMessage("Error connecting to server.");
+      const errorMessage =
+        error.response?.data?.error || "Error connecting to the server.";
+      setMessage(errorMessage);
     }
   };
 

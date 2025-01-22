@@ -19,10 +19,10 @@ export const adminLogin = async (email, password) => {
       return { success: false, error: 'Incorrect password' };
     }
 
-    // If login is successful, return the admin details
-    return { success: true, user: admin };
+    return { success: true, user: { id: admin.id, email: admin.email, username: admin.username } };
   } catch (error) {
     console.error('Database error during admin login:', error);
     return { success: false, error: 'Database error' };
   }
 };
+
