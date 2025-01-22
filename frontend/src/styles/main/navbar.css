@@ -1,0 +1,133 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: transparent;
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: rgba(200, 150, 255, 1);
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.user-name {
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+.user-name:hover {
+    color: rgba(200, 150, 255, 1);
+}
+
+
+.logout-button {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.logout-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ff4d4d;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .nav-left {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .nav-right {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+
+    .brand {
+        font-size: 22px;
+    }
+
+    .user-name {
+        font-size: 14px;
+    }
+
+    .logout-button {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 8px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .brand {
+        font-size: 20px;
+    }
+
+    .user-name {
+        font-size: 12px;
+    }
+
+    .logout-button {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}

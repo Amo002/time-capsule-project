@@ -1,0 +1,150 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 250px;
+  margin: 50px auto;
+}
+
+.login-container h2 {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+  text-align: left;
+
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form-group input:focus {
+  border-color: rgb(122, 89, 163);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.login-button {
+  width: 110%;
+  padding: 12px 15px;
+  font-size: 16px;
+  color: white;
+  background-color: rgb(38, 11, 68);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: rgb(49, 17, 85);
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 14px;
+  color: red;
+  text-align: center;
+}
+
+.register-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.register-link p {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.register-link a {
+  color: rgb(122, 89, 163);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+  color: rgb(110, 75, 153);
+}
+
+@media screen and (max-width: 768px) {
+  .login-container {
+    padding: 30px;
+    width: 90%;
+  }
+
+  .login-container h2 {
+    font-size: 20px;
+  }
+
+  .form-group input {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .login-button {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .register-link p {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+    width: 95%;
+  }
+
+  .login-container h2 {
+    font-size: 18px;
+  }
+
+  .form-group input {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .login-button {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .register-link p {
+    font-size: 12px;
+  }
+}

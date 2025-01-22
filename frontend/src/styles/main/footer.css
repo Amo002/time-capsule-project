@@ -1,0 +1,29 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: rgba(4, 0, 4, 1);
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-links {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.footer-link {
+    color: rgba(200, 150, 255, 1);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: rgba(255, 204, 255, 1);
+}

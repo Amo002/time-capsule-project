@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../styles/adminLogin.css'; // Import admin login styles
+import '../../styles/admin/adminLogin.css';
 
 const AdminLogin = () => {
   const [email, setEmail] = useState('');
@@ -10,14 +10,14 @@ const AdminLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/admin-login', {
+      const response = await axios.post('http://localhost:5000/api/admin/login', {
         email,
         password,
       });
 
       if (response.data.success) {
         setMessage('Admin login successful!');
-        // Redirect to admin dashboard (e.g., navigate('/admin-dashboard'))
+        // Handle successful login (e.g., redirect to dashboard)
       } else {
         setMessage(response.data.error || 'Admin login failed.');
       }
