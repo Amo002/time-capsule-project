@@ -64,6 +64,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-right:10px
 }
 
 .delete-button {
@@ -78,4 +79,145 @@
 
 .action-button:hover {
   opacity: 0.8;
+}
+
+.message-box {
+  background-color: rgba(108, 53, 124, 0.9);
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modelMessage{
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.modelMessage.success {
+  background-color: rgba(43, 192, 43, 0.8);
+  color: white;
+}
+
+.modelMessage.error {
+  background-color: rgba(192, 43, 43, 0.8);
+  color: white;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.modal-content {
+  background: rgba(108, 53, 124, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  max-width: 400px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  animation: slideDown 0.5s ease;
+}
+
+
+.modal-content label {
+  display: block;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.modal-content input,
+.modal-content select {
+  display: block;
+  width: 80%;
+  padding: 8px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  color: white;
+}
+
+.modal-content select {
+  appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-content select option {
+  background: rgba(108, 53, 124, 0.9);
+  color: white;
+}
+
+.save-button,
+.cancel-button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
+.save-button {
+  background: rgba(43, 192, 43, 0.8);
+  color: white;
+}
+
+.save-button:hover {
+  background: rgba(43, 192, 43, 1);
+}
+
+.cancel-button {
+  background: rgba(192, 43, 43, 0.8);
+  color: white;
+}
+
+.cancel-button:hover {
+  background: rgba(192, 43, 43, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .save-button,
+  .cancel-button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
 }

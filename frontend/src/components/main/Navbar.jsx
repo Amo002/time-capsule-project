@@ -4,18 +4,21 @@ import "../../styles/main/navbar.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
-
   const isLoggedIn = !!localStorage.getItem("userToken");
 
   let userData;
   try {
     userData = JSON.parse(localStorage.getItem("userData")) || {};
   } catch (error) {
-    userData = {}; // Fallback if parsing fails
+    userData = {};
   }
 
   const handleProfileClick = () => {
     navigate("/profile");
+  };
+
+  const handleAdminDashboardClick = () => {
+    navigate("/admin/dashboard");
   };
 
   const handleLogout = () => {
@@ -41,6 +44,14 @@ const Navbar = () => {
             <span className="user-name" onClick={handleProfileClick}>
               Welcome, {userData.username || "User"}
             </span>
+            {userData.role_id === 1 && (
+              <button
+                className="dashboard-button"
+                onClick={handleAdminDashboardClick}
+              >
+                Dashboard
+              </button>
+            )}
             <button className="logout-button" onClick={handleLogout}>
               Logout
             </button>

@@ -43,3 +43,17 @@
 .navbar-right .logout-button:hover {
     background-color: rgba(228, 63, 90, 0.8);
 }
+
+.navbar-right .homePage-button {
+    background-color: rgba(200, 150, 255, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-right .homePage-button:hover {
+    background-color: rgb(186, 122, 255);
+}

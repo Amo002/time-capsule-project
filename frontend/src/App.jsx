@@ -31,7 +31,14 @@ const App = () => {
             </RedirectIfAuthenticated>
           }
         />
-        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route
+          path="/admin-login"
+          element={
+            <RedirectIfAuthenticated>
+              <AdminLogin />
+            </RedirectIfAuthenticated>
+          }
+        />
         <Route
           path="/admin/dashboard"
           element={

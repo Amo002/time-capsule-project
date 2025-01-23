@@ -13,29 +13,36 @@ export const loginUser = async (req, res) => {
 
       // Generate a JWT token
       const token = jwt.sign(
-        { id: user.id, email: user.email, role: user.role_id }, // Payload
-        process.env.JWT_SECRET, 
-        { expiresIn: '1h' } 
+        { id: user.id, email: user.email, role_id: user.role_id },
+        process.env.JWT_SECRET,
+        { expiresIn: '1h' }
       );
 
-      res.status(200).json({
+      return res.status(200).json({
         success: true,
-        user: { id: user.id, username: user.username, email: user.email },
+        user: {
+          id: user.id,
+          username: user.username,
+          email: user.email,
+          role_id: user.role_id,
+        },
         token,
       });
-    } else if (result.error === 'User not found') {
-      res.status(404).json({ success: false, error: 'User not found' });
-    } else if (result.error === 'Incorrect password') {
-      res.status(401).json({ success: false, error: 'Incorrect password' });
-    } else {
-      res.status(400).json({ success: false, error: result.error });
     }
+
+    if (result.error === 'User not found') {
+      return res.status(404).json({ success: false, error: 'User not found' });
+    }
+    if (result.error === 'Incorrect password') {
+      return res.status(401).json({ success: false, error: 'Incorrect password' });
+    }
+
+    return res.status(400).json({ success: false, error: result.error });
   } catch (error) {
     console.error('Error during user login:', error);
-    res.status(500).json({ success: false, error: 'Server error' });
+    return res.status(500).json({ success: false, error: 'Server error' });
   }
 };
-
 
 export const registerUser = async (req, res) => {
   const { username, email, password } = req.body;

@@ -72,6 +72,23 @@
     color: #ff4d4d;
 }
 
+.dashboard-button {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.dashboard-button:hover {
+    background-color:rgba(200, 150, 255, 1);
+    color: #ffffff;
+}
+
 @media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;

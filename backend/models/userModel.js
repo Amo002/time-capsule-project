@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 export const userLogin = async (email, password) => {
   try {
     const [rows] = await pool.query('SELECT * FROM users WHERE email = ?', [email]);
+
     if (rows.length === 0) {
       return { success: false, error: 'User not found' };
     }
@@ -13,13 +14,13 @@ export const userLogin = async (email, password) => {
     if (!passwordMatch) {
       return { success: false, error: 'Incorrect password' };
     }
-
     return { success: true, user };
   } catch (error) {
     console.error('Database error during user login:', error);
     return { success: false, error: 'Database error' };
   }
 };
+
 
 
 export const userRegister = async (username, email, password) => {

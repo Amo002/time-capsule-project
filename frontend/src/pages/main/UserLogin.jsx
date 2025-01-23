@@ -15,16 +15,17 @@ const UserLogin = () => {
     try {
       const response = await axios.post(
         "http://localhost:5000/api/users/login",
-        {
-          email,
-          password,
-        }
+        { email, password }
       );
 
       if (response.data.success) {
-        localStorage.setItem("userToken", response.data.token);
-        localStorage.setItem("userData", JSON.stringify(response.data.user));
+        const { token, user } = response.data;
+
+        localStorage.setItem("userToken", token);
+        localStorage.setItem("userData", JSON.stringify(user));
+
         setMessage("User login successful!");
+        
         navigate("/");
       } else {
         setMessage(response.data.error || "User login failed.");

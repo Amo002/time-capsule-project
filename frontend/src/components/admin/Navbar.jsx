@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/admin/adminNavbar.css";
 import defaultProfilePicture from "../../assets/images/default-profile.jpg";
-
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = ({ handleLogout }) => {
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     username: "",
     email: "",
-    profilePicture: defaultProfilePicture, 
+    profilePicture: defaultProfilePicture,
   });
 
-  
   useEffect(() => {
     const storedUserData = JSON.parse(localStorage.getItem("userData"));
     if (storedUserData) {
@@ -21,6 +21,10 @@ const Navbar = ({ handleLogout }) => {
       });
     }
   }, []);
+
+  const handleHomePage = () => {
+    navigate("/");
+  };
 
   return (
     <div className="admin-navbar">
@@ -36,6 +40,10 @@ const Navbar = ({ handleLogout }) => {
         </div>
       </div>
       <div className="navbar-right">
+        <button onClick={handleHomePage} className="homePage-button">
+          Home Page
+        </button>
+
         <button onClick={handleLogout} className="logout-button">
           Logout
         </button>
