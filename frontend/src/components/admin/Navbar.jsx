@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/admin/adminNavbar.css";
-import defaultProfilePicture from "../../assets/images/default-profile.jpg";
 import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = ({ handleLogout }) => {
+  const defaultProfilePicture = "http://localhost:5000/default/default-profile.jpg";
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
     username: "",

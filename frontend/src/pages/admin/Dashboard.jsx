@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import AdminLayout from "../../layouts/admin/AdminLayout";
 import "../../styles/admin/dashboard.css";
 import axios from "axios";
-import defaultProfilePicture from "../../assets/images/default-profile.jpg";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("manageUsers");
@@ -11,6 +10,9 @@ const Dashboard = () => {
   const [modalMessage, setModalMessage] = useState({ text: "", type: "" }); // Updated to hold type
   const [showModal, setShowModal] = useState(false);
   const [editUser, setEditUser] = useState(null);
+
+  const defaultProfilePicture = "http://localhost:5000/default/default-profile.jpg";
+
 
   useEffect(() => {
     if (activeTab === "manageUsers") {

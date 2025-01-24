@@ -14,7 +14,8 @@ const Navbar = () => {
   }
 
   const handleProfileClick = () => {
-    navigate("/profile");
+    const userId = userData.id;
+    navigate("/profile/" + userId);
   };
 
   const handleAdminDashboardClick = () => {
@@ -41,9 +42,12 @@ const Navbar = () => {
           </Link>
         ) : (
           <>
-            <span className="user-name" onClick={handleProfileClick}>
-              Welcome, {userData.username || "User"}
-            </span>
+            <button
+                className="dashboard-button"
+                onClick={handleProfileClick}
+              >
+                Profile
+              </button>
             {userData.role_id === 1 && (
               <button
                 className="dashboard-button"

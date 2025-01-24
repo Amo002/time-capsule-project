@@ -5,8 +5,10 @@ import Register from "./pages/main/Register";
 import AdminLogin from "./pages/admin/AdminLogin";
 import Dashboard from "./pages/admin/Dashboard";
 import Home from "./pages/main/Home";
+import Profile from "./pages/main/Profile";
 import RedirectIfAuthenticated from "./hoc/RedirectIfAuthenticated";
 import RequireAdminAuth from "./hoc/RequireAdminAuth";
+import RequireUserAuth from "./hoc/RequireUserAuth";
 import NotFound from "./pages/NotFound";
 import "./styles/app.css";
 
@@ -47,6 +49,12 @@ const App = () => {
             </RequireAdminAuth>
           }
         />
+        <Route path = "profile/:userId" element={
+          <RequireUserAuth>
+            <Profile />
+          </RequireUserAuth>
+        }/>
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

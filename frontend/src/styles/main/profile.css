@@ -1,0 +1,271 @@
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 2%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.details h2 {
+  margin: 0;
+  font-size: 24px;
+  color: white;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  width: 90%;
+}
+
+.create-form label {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.create-form input,
+.create-form textarea,
+.create-form select {
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+}
+
+.create-form select {
+  appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.create-form select option {
+  background: rgba(108, 53, 124, 0.9);
+  color: white;
+}
+
+.create-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.create-form button {
+  padding: 10px 15px;
+  background: rgba(43, 192, 43, 0.8);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.create-form button:hover {
+  background: rgba(43, 192, 43, 1);
+}
+
+.capsule-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  width: 100%;
+}
+
+.capsule-item {
+  flex: 1 1 calc(33% - 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  max-width: calc(33% - 20px);
+  max-height: 400px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.capsule-image {
+  width: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.capsule-item h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: white;
+}
+
+.capsule-item p {
+  margin: 5px 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+.capsule-image img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.message-box {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.message-box.success {
+  background: rgba(43, 192, 43, 0.8);
+  color: white;
+}
+
+.message-box.error {
+  background: rgba(192, 43, 43, 0.8);
+  color: white;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  padding: 10px;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.05
+  );
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pagination-button {
+  padding: 10px 15px;
+  background: rgba(108, 53, 124, 0.9);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.pagination-button:hover {
+  background: rgba(108, 53, 124, 1);
+  transform: scale(1.1);
+}
+
+.pagination-button.active {
+  background: rgba(43, 192, 43, 0.9);
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+.pagination-button:disabled {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 10px;
+}
+
+  
+/* Responsive styles */
+@media (max-width: 768px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .capsule-item {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+
+  .create-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .capsule-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+  }
+
+  .details h2 {
+    font-size: 20px;
+  }
+}
+
