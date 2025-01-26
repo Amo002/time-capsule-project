@@ -1,11 +1,10 @@
-
-                 CAPSULE PROJECT
+#CAPSULE PROJECT
 
 
 A web application for managing time capsules where users can store content and set a release date to access the content in the future. The app supports roles (admin and user) and includes features like countdown timers, user profiles, and dynamic content fetching.
 
 
-                   FEATURES
+#FEATURES
 
 - **User Roles:** Admin and User roles with distinct permissions.
 - **Time Capsules:** Create, edit, delete, and view capsules with release dates.
@@ -14,7 +13,7 @@ A web application for managing time capsules where users can store content and s
 - **Admin Management:** Admin can oversee and manage users and capsules.
 
 
-                   HOW TO USE
+#HOW TO USE
 
 1. **Clone the Repository:**
    ```bash
@@ -76,7 +75,7 @@ A web application for managing time capsules where users can store content and s
    ```
 
 
-                DATABASE SCHEMA
+#DATABASE SCHEMA
 
 ### Tables:
 1. **roles**
@@ -104,23 +103,23 @@ A web application for managing time capsules where users can store content and s
    - `updated_at` (TIMESTAMP, Default: Current Timestamp, On Update)
 
 
-           DEFAULT CREDENTIALS
+#DEFAULT CREDENTIALS
 
 - Admin Email: `admin@cp.com`
 - Admin Password: `admin`
 
 
-                   NOTES
+#NOTES
 
 - **JWT Secret:** Update `JWT_SECRET` in `.env` for better security.
 - **Images Directory:** Default profile pictures are stored in `assets/images/default/`.
 
 
-                   SUPPORT
+#SUPPORT
 
 If you encounter any issues, feel free to contact the project maintainer.
 
 
-                  THANK YOU!
+#THANK YOU!
 
 
