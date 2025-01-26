@@ -1,6 +1,11 @@
-import { parse } from "dotenv";
-import { userLogin, userRegister, fetchCapsules, createCapsule } from "../models/userModel.js";
+import {
+  userLogin,
+  userRegister,
+  fetchCapsules,
+  createCapsule,
+} from "../models/userModel.js";
 import jwt from "jsonwebtoken";
+
 import multer from "multer";
 import path from "path";
 
@@ -64,21 +69,26 @@ export const registerUser = async (req, res) => {
   }
 };
 
-export const capsuleFetch = async (req, res) => {
+export const capsulesFetch = async (req, res) => {
   try {
     const { userId } = req.params;
+    const { page = 1, limit = 6 } = req.query;
 
-    const capsules = await fetchCapsules(userId);
+    const { capsules, total } = await fetchCapsules(
+      userId,
+      parseInt(page),
+      parseInt(limit)
+    );
 
     if (!capsules || capsules.length === 0) {
       return res
-        .status(404)
-        .json({ success: false, error: "No capsules found" });
+        .status(200)
+        .json({ success: false, message: "No capsules found" });
     }
 
-    res.status(200).json({ success: true, capsules });
+    res.status(200).json({ success: true, capsules, total });
   } catch (error) {
-    console.error("Error during fetching capsules:", error);
+    console.error("Error during fetching capsules:", error.message);
     res.status(500).json({ success: false, error: "Database error" });
   }
 };
@@ -119,22 +129,23 @@ export const addCapsule = (req, res) => {
 
     try {
       const { userId } = req.params;
-      const { title, content, release_date, is_public } = req.body;
+      const { title, content, release_date } = req.body;
       const image_url = req.file ? req.file.filename : null;
 
-      console.log("Capsule Creation Params:", {
+      console.log("Capsule Creation Input:", {
         userId,
         title,
         content,
-        release_date,
-        is_public,
         image_url,
+        release_date,
       });
 
-      if (!title || !content || !release_date) {
-        return res
-          .status(400)
-          .json({ success: false, error: "Missing required fields." });
+      if (!userId || !title || !content || !release_date) {
+        return res.status(400).json({
+          success: false,
+          error:
+            "Missing required fields: userId, title, content, release_date.",
+        });
       }
 
       const newCapsule = await createCapsule(
@@ -142,8 +153,7 @@ export const addCapsule = (req, res) => {
         title,
         content,
         image_url,
-        release_date,
-        is_public === "true"
+        release_date
       );
 
       res.status(201).json({ success: true, capsule: newCapsule });

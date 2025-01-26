@@ -6,6 +6,7 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import Dashboard from "./pages/admin/Dashboard";
 import Home from "./pages/main/Home";
 import Profile from "./pages/main/Profile";
+import Capsule from "./pages/main/Capsule";
 import RedirectIfAuthenticated from "./hoc/RedirectIfAuthenticated";
 import RequireAdminAuth from "./hoc/RequireAdminAuth";
 import RequireUserAuth from "./hoc/RequireUserAuth";
@@ -49,11 +50,23 @@ const App = () => {
             </RequireAdminAuth>
           }
         />
-        <Route path = "profile/:userId" element={
-          <RequireUserAuth>
-            <Profile />
-          </RequireUserAuth>
-        }/>
+        <Route
+          path="profile/:userId"
+          element={
+            <RequireUserAuth>
+              <Profile />
+            </RequireUserAuth>
+          }
+        />
+
+        <Route
+          path="/capsule/:capsuleId"
+          element={
+            <RequireUserAuth>
+              <Capsule />
+            </RequireUserAuth>
+          }
+        />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

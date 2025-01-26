@@ -60,15 +60,23 @@ export const userRegister = async (username, email, password) => {
   }
 };
 
-export const fetchCapsules = async (userId) => {
+export const fetchCapsules = async (userId, page = 1, limit = 6) => {
   try {
+    const offset = (page - 1) * limit;
+
     const [capsules] = await pool.query(
-      "SELECT * FROM capsules WHERE user_id = ?",
+      `SELECT id, title, release_date FROM capsules WHERE user_id = ? LIMIT ? OFFSET ?`,
+      [userId, limit, offset]
+    );
+
+    const [[{ total }]] = await pool.query(
+      `SELECT COUNT(*) as total FROM capsules WHERE user_id = ?`,
       [userId]
     );
-    return capsules;
+
+    return { capsules, total };
   } catch (error) {
-    console.error("Database error during fetching capsules:", error);
+    console.error("Database error during fetching capsules:", error.message);
     throw new Error("Database error");
   }
 };
@@ -78,13 +86,12 @@ export const createCapsule = async (
   title,
   content,
   image_url,
-  release_date,
-  is_public
+  release_date
 ) => {
   try {
     const [result] = await pool.query(
-      "INSERT INTO capsules (user_id, title, content, image_url, release_date, is_public) VALUES (?, ?, ?, ?, ?, ?)",
-      [userId, title, content, image_url, release_date, is_public]
+      "INSERT INTO capsules (user_id, title, content, image_url, release_date) VALUES (?, ?, ?, ?, ?)",
+      [userId, title, content, image_url, release_date]
     );
 
     const [newCapsule] = await pool.query(
@@ -94,7 +101,8 @@ export const createCapsule = async (
 
     return newCapsule[0];
   } catch (error) {
-    console.error("Database error during capsule creation:", error);
+    console.error("Database error during capsule creation:", error.message);
     throw new Error("Database error");
   }
 };
+

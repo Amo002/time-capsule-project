@@ -141,12 +141,6 @@ const Dashboard = () => {
           >
             Manage Users
           </div>
-          <div
-            className={`card ${activeTab === "manageCapsules" ? "active" : ""}`}
-            onClick={() => setActiveTab("manageCapsules")}
-          >
-            Manage Capsules
-          </div>
         </div>
 
         <div className="content-section">
@@ -197,12 +191,6 @@ const Dashboard = () => {
                   ))}
                 </tbody>
               </table>
-            </div>
-          )}
-          {activeTab === "manageCapsules" && (
-            <div className="capsules-section">
-              <h2>Capsules Management</h2>
-              <p>Capsules functionality coming soon...</p>
             </div>
           )}
         </div>
