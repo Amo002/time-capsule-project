@@ -1,21 +1,21 @@
-==================================================
+
                  CAPSULE PROJECT
-==================================================
+
 
 A web application for managing time capsules where users can store content and set a release date to access the content in the future. The app supports roles (admin and user) and includes features like countdown timers, user profiles, and dynamic content fetching.
 
-==================================================
+
                    FEATURES
-==================================================
+
 - **User Roles:** Admin and User roles with distinct permissions.
 - **Time Capsules:** Create, edit, delete, and view capsules with release dates.
 - **Countdown Timer:** Display countdown for capsules not yet released.
 - **Profile Management:** User profiles with profile pictures and details.
 - **Admin Management:** Admin can oversee and manage users and capsules.
 
-==================================================
+
                    HOW TO USE
-==================================================
+
 1. **Clone the Repository:**
    ```bash
    git clone <repository-link>
@@ -75,9 +75,9 @@ A web application for managing time capsules where users can store content and s
    http://localhost:3000
    ```
 
-==================================================
+
                 DATABASE SCHEMA
-==================================================
+
 ### Tables:
 1. **roles**
    - `id` (INT, Primary Key, Auto Increment)
@@ -103,24 +103,24 @@ A web application for managing time capsules where users can store content and s
    - `created_at` (TIMESTAMP, Default: Current Timestamp)
    - `updated_at` (TIMESTAMP, Default: Current Timestamp, On Update)
 
-==================================================
+
            DEFAULT CREDENTIALS
-==================================================
+
 - Admin Email: `admin@cp.com`
 - Admin Password: `admin`
 
-==================================================
+
                    NOTES
-==================================================
+
 - **JWT Secret:** Update `JWT_SECRET` in `.env` for better security.
 - **Images Directory:** Default profile pictures are stored in `assets/images/default/`.
 
-==================================================
+
                    SUPPORT
-==================================================
+
 If you encounter any issues, feel free to contact the project maintainer.
 
-==================================================
+
                   THANK YOU!
-==================================================
+
 
